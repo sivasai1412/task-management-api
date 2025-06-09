@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "1cb2b2b3-63ed-4832-be8d-5134bd3faa36",
+		"name": "Task Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "45749846"
+	},
+	"item": [
+		{
+			"name": "createTask",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Finish Assignment\",\r\n  \"description\": \"Complete the backend and frontend layers for the task manager project.\",\r\n  \"dueDate\": \"2025-06-15\",\r\n  \"priority\": \"HIGH\",\r\n  \"completed\": false\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}api/v1/tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}api/v1/tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "getTaskById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/v1/tasks/:id",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "dc5a0e7e-5829-4a26-a171-2827d97c82aa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateByTaskId",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Finish Assig\",\r\n  \"description\": \"Complete the backend and frontend layers for the task manager project.\",\r\n  \"dueDate\": \"2025-06-15\",\r\n  \"priority\": \"HIGH\",\r\n  \"completed\": false\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}api/v1/tasks/:id",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6fc46c2b-1122-4952-aa5b-6988a0a92854"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteByTaskId",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/v1/tasks/:id",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "7221bb11-fb65-46cd-9ebb-6a42a7c9a189"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080/",
+			"type": "string"
+		}
+	]
+}
